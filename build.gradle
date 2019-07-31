@@ -21,12 +21,6 @@ dependencies {
     compile gradleApi()
 }
 
-task moveFile(type: Copy) {
-    dependsOn build
-    from file("$buildDir/libs/modpackbuilder-1.0-SNAPSHOT.jar")
-    into file("F:\\Dev\\realms\\plugins")
-}
-
 
 
 sourceSets {
@@ -36,6 +30,23 @@ sourceSets {
         }
         groovy {
             srcDirs = ['src/main/java' ]
+        }
+    }
+}
+
+pluginBundle {
+    website = 'https://github.com/mpztilera/modpackbuilder'
+    vcsUrl = 'https://github.com/mpztilera/modpackbuilder'
+    tags = ['minecraft']
+}
+
+gradlePlugin {
+    plugins {
+        greetingsPlugin {
+            id = 'anvil.modpackbuilder'
+            displayName = 'Modpack Builder'
+            description = 'A plugin to build Minecraft modpacks from Twitch exports'
+            implementationClass = 'anvil.modpackbuilder.MBPlugin'
         }
     }
 }
