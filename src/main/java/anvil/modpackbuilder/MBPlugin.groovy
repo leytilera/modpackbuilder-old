@@ -84,7 +84,7 @@ public class MBPlugin implements Plugin<Project> {
         def buildTwitch = project.task("buildTwitch", type: Zip) {
             from "build/mc/twitch"
             extension = "zip"
-            version = manifest.version
+            version = manifest.mpversion
             baseName = manifest.name
             appendix = "twitch"
 
