@@ -3,7 +3,7 @@ package anvil.modpackbuilder
 
 class ManifestJSON {
 
-    String name
-    String mpversion
+    String name = "";
+    String mpversion = "";
 
 }
