@@ -45,7 +45,7 @@ public class MBPlugin implements Plugin<Project> {
 
         //Twitch Tasks
 
-        def manifest = new ManifestJSON()
+        ManifestJSON manifest = new ManifestJSON()
 
         def copyManifest = project.task("copyManifest", type: Copy) {
             from "src/twitch/manifest.json"
